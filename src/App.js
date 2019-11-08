@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CharacterCard from "./components/CharacterCard";
+import AnimalCard from "./components/AnimalCard";
 import Wrapper from "./components/Wrapper";
 import animals from "./animals.json";
 
@@ -58,7 +58,7 @@ class App extends Component {
       <Wrapper>
       <h1> {this.state.score} </h1>
       {this.state.animals.map(character => (
-        <CharacterCard
+        <AnimalCard
           id={character.id}
           key={character.id}
           image={character.image}

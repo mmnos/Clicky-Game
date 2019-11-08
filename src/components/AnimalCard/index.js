@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-function CharacterCard({ id, name, image, handleIncrement }) {
+function AnimalCard({ id, name, image, handleIncrement }) {
   return (
     <div className="card">
       <div className="img-container">
@@ -11,4 +11,4 @@ function CharacterCard({ id, name, image, handleIncrement }) {
   );
 }
 
-export default CharacterCard;
+export default AnimalCard;
