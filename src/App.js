@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import CharacterCard from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
-import characters from "./characters.json";
+import animals from "./animals.json";
 
 class App extends Component {
 
   state = {
-    characters,
+    animals,
     score : 0
   };
 
@@ -30,10 +30,9 @@ class App extends Component {
       return array;
   }
 
-  // handleIncrement increases this.state.count by 1
   handleIncrement = id => {
     let prevClicked = false;
-    let updateCharacter = this.state.characters.map(character => {
+    let updateCharacter = this.state.animals.map(character => {
       if ( character.isClicked > false && id === character.id ) {
         prevClicked = true;
         console.log("loser");
@@ -45,12 +44,11 @@ class App extends Component {
         }
       }
     });
-    console.log(updateCharacter);
 
     if ( prevClicked ) {
-      this.setState({ characters : characters, score : 0 });
+      this.setState({ animals : animals, score : 0 });
     } else {
-      this.setState({ characters : this.shuffle(updateCharacter), score : this.state.score + 1 });
+      this.setState({ animals : this.shuffle(updateCharacter), score : this.state.score + 1 });
     }
   };
 
@@ -59,7 +57,7 @@ class App extends Component {
     return (
       <Wrapper>
       <h1> {this.state.score} </h1>
-      {this.state.characters.map(character => (
+      {this.state.animals.map(character => (
         <CharacterCard
           id={character.id}
           key={character.id}
